@@ -1,6 +1,6 @@
 
 # coding: utf-8
-
+#This function is called after sparsifyDensify.py
 import sparsifyDensify
 import pandas as pd
 import numpy as np
