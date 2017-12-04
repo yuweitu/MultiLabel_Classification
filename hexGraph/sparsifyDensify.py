@@ -42,10 +42,10 @@ def sparsifyDensify(Eh, Ee):
             s = qD[j]
             if Eh[i, s]:
                 #Sparsify
-                Ehs[i, s] = 0
+                Ehs[i, s] = False
             else:
                 #Densify
-                Ehd[i, s] = 1
+                Ehd[i, s] = True
     #About Ee (check exclusion edges) 
     for i in range(numV-1):# This is because Ee is symmetric matrix
         for j in range(i+1,numV):
@@ -87,12 +87,12 @@ def sparsifyDensify(Eh, Ee):
             if exist:
                 if Ee[i, j]:
                     #Sparsify
-                    Ees[i, j] = 0
-                    Ees[j, i] = 0   
+                    Ees[i, j] = False
+                    Ees[j, i] = False
                 else:
                     #Densify
-                    Eed[i, j] =1
-                    Eed[j, i] =1
+                    Eed[i, j] =True
+                    Eed[j, i] =True
     return Ehs, Ees, Ehd, Eed
 
 
